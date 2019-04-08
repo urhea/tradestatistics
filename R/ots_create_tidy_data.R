@@ -81,7 +81,7 @@ ots_create_tidy_data <- function(years = NULL,
   
   url <- "year_range"
   
-  resp <- crul::HttpClient$new(url = "https://api.tradestatistics.io/")
+  resp <- crul::HttpClient$new(url = "http://localhost:8080/")
   resp <- resp$get(url)
   
   year_range <- purrr::as_vector(jsonlite::fromJSON(resp$parse(encoding = "UTF-8")))

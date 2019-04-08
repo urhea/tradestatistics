@@ -64,7 +64,7 @@ ots_read_from_api <- function(year = NULL,
     "yc" = sprintf("yc?y=%s&c=%s&l=%s", year, product_code, product_code_length)
   )
   
-  resp <- crul::HttpClient$new(url = "https://api.tradestatistics.io/")
+  resp <- crul::HttpClient$new(url = "http://localhost:8080/")
   resp <- resp$get(url)
   
   # on a successful GET, return the response
